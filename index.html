@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-01CSEG65BV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-01CSEG65BV');
+    </script>
+    <title>Home - Upward Athlete</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'anton': ['Anton', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Prevent horizontal scroll on carousel */
+        #coaches-carousel {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+        #coaches-slider {
+            display: flex;
+            will-change: transform;
+        }
+        #coaches-slider > div {
+            flex: 0 0 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+            <div class="px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <a href="./" class="flex-shrink-0 flex items-center gap-2 ml-2">
+                            <img src="images/upward-athlete-horizontal-transparent-logo.png" alt="Upward Athlete logo" class="h-[3.25rem] w-auto" />
+                        </a>
+                    </div>
+
+                    <div class="hidden lg:flex items-center space-x-4">
+                        <a href="./"
+                            class="px-3 py-2 text-sm font-bold text-[#0F1629] hover:text-sky-500 transition-colors">Home</a>
+                        <a href="demo/"
+                            class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Demo</a>
+                        <a href="examples/"
+                            class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Examples</a>
+                        <a href="services/"
+                            class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Services</a>
+                        <a href="process/"
+                            class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Process</a>
+                        <a href="faq/"
+                            class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">FAQ</a>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <a href="demo/"
+                            class="hidden sm:inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-md text-[#0F1629] bg-sky-400 hover:bg-sky-500 transition-all uppercase tracking-wider">
+                            Try Demo
+                        </a>
+                        <a href="contact/"
+                            class="inline-flex items-center px-4 py-2 border border-[#0F1629] text-sm font-bold rounded-md text-white bg-[#0F1629] hover:bg-slate-800 transition-all uppercase tracking-wider">
+                            Book Now
+                        </a>
+                        <button id="mobile-menu-button"
+                            class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-[#0F1629] hover:text-sky-500 transition-colors"
+                            aria-label="Menu">
+                            <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden lg:hidden pb-4 border-t border-slate-200 mt-2">
+                    <div class="flex flex-col space-y-2 pt-4">
+                        <a href="./"
+                            class="px-3 py-2 text-sm font-bold text-[#0F1629] hover:text-sky-500 transition-colors">Home</a>
+                        <a href="demo/"
+                            class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Demo</a>
+                        <a href="examples/"
+                            class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Examples</a>
+                        <a href="services/"
+                            class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Services</a>
+                        <a href="process/"
+                            class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Process</a>
+                        <a href="faq/"
+                            class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="overflow-x-hidden">
+        <!-- Hero Section -->
+        <section class="relative min-h-[75vh] md:min-h-[85vh] flex items-center pt-16 pb-8 md:pt-20 md:pb-12 bg-[#0F1629] text-white overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-40">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000&auto=format&fit=crop"
+                    class="w-full h-full object-cover object-right object-bottom lg:object-left" alt="Sports background" />
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0F1629] via-[#0F1629]/80 to-transparent"></div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl">
+                    <h1 class="text-5xl md:text-7xl font-anton tracking-tight mb-4 leading-[1.1] md:leading-[1.02] lg:leading-[0.98]">
+                        CONTROL WHAT <br>
+                        <span id="hero-audience-word" class="text-sky-500">COLLEGES</span> <br>
+                        SEE ABOUT <span class="text-sky-500">YOU</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-300 font-montserrat mb-8 leading-relaxed">
+                        Mobile-first student-athlete profiles that showcase stats, academics, highlights, and
+                        character—clean, fast, and built to get noticed.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="demo/"
+                            class="px-8 py-4 bg-sky-500 text-[#0F1629] font-bold rounded-lg text-lg uppercase tracking-wider hover:bg-sky-400 transition-all text-center">
+                            Try the Demo
+                        </a>
+                        <a href="contact/"
+                            class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg text-lg uppercase tracking-wider hover:bg-white hover:text-[#0F1629] transition-all text-center">
+                            Book a Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Mockup Preview -->
+            <div class="hidden lg:block absolute left-[-2%] top-1/2 -translate-y-1/4 w-1/4 rotate-[5deg]">
+                <div class="bg-slate-800 p-2 rounded-2xl shadow-2xl border border-slate-700">
+                    <img src="images/johnlemonspage.png" class="rounded-xl w-full h-auto grayscale-[20%]"
+                        alt="Profile mockup" />
+                </div>
+            </div>
+        </section>
+
+        <!-- "What You Get" Grid -->
+        <!-- "What You Get" Grid (UPDATED) -->
+<section class="relative py-12 bg-white overflow-hidden">
+    <!-- Subtle background accents -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-sky-100/60 blur-3xl"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-slate-100 blur-3xl"></div>
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+    </div>
+    <!-- Everything Coaches Need -->
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h2 class="text-4xl md:text-5xl font-anton mb-4">Everything Coaches Need</h2>
+        <span class="block w-48 h-2 rounded-full bg-sky-500 mx-auto"></span>
+      </div>
+  
+      <!-- Desktop Grid (hidden on mobile) -->
+      <div class="hidden md:grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-sky-200/70 shadow-lg shadow-sky-500/5
+                 hover:shadow-2xl hover:shadow-sky-500/10 hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-white opacity-100"></div>
+          <div class="absolute -right-10 -top-10 w-32 h-32 rounded-full bg-sky-200/40 blur-2xl"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-sky-500 flex items-center justify-center shadow-lg shadow-sky-500/30
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-magnifying-glass text-white text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-sky-600 bg-sky-100/70 px-3 py-1 rounded-full">
+                Visibility
+              </span>
+            </div>
+  
+            <h3 class="text-xl font-bold mb-3 text-[#0F1629]">Google Search Ready</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Search a student's name on Google and their portfolio appears. Built with SEO optimization so coaches find you instantly.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Card 2 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-[#0F1629]/5
+                 hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+          <div class="absolute -left-10 -bottom-10 w-36 h-36 rounded-full bg-sky-200/30 blur-2xl"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-sky-100 flex items-center justify-center ring-1 ring-sky-200
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-user-astronaut text-sky-500 text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                Snapshot
+              </span>
+            </div>
+  
+            <h3 class="text-xl font-bold mb-3 text-[#0F1629]">Athlete Overview</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Identity, contact info, sport basics, and bio at a glance.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Card 3 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-[#0F1629]/5
+                 hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-sky-100 flex items-center justify-center ring-1 ring-sky-200
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-graduation-cap text-sky-500 text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                Credibility
+              </span>
+            </div>
+  
+            <h3 class="text-xl font-bold mb-3 text-[#0F1629]">Academics &amp; Character</h3>
+            <p class="text-slate-600 leading-relaxed">
+              GPA, honors, leadership roles, and community impact.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Card 4 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-[#0F1629]/5
+                 hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-sky-100 flex items-center justify-center ring-1 ring-sky-200
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-chart-line text-sky-500 text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                Proof
+              </span>
+            </div>
+  
+            <h3 class="text-xl font-bold mb-3 text-[#0F1629]">Performance Stats</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Verified MaxPreps/Hudl stats, or can be provided by you.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Card 5 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-[#0F1629]/5
+                 hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-sky-100 flex items-center justify-center ring-1 ring-sky-200
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-video text-sky-500 text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                Media
+              </span>
+            </div>
+  
+            <h3 class="text-xl font-bold mb-3 text-[#0F1629]">Highlights &amp; Media</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Embedded game film, reels, and high-res action photos.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Card 6 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-[#0F1629]/5
+                 hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-sky-100 flex items-center justify-center ring-1 ring-sky-200
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-trophy text-sky-500 text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                Results
+              </span>
+            </div>
+  
+            <h3 class="text-xl font-bold mb-3 text-[#0F1629]">Awards &amp; Recognition</h3>
+            <p class="text-slate-600 leading-relaxed">
+              All-region awards, MVP honors, tournament wins, and verified coach endorsements.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Carousel (visible on mobile only) -->
+      <div class="md:hidden relative -mx-4 sm:-mx-6">
+        <div id="coaches-carousel" class="overflow-hidden w-full">
+          <div id="coaches-slider" class="flex transition-transform duration-500 ease-in-out">
+            <!-- Card 1 -->
+            <div class="min-w-full flex-shrink-0 px-14 sm:px-8">
+              <div class="group relative p-6 rounded-2xl bg-white border border-sky-200/70 shadow-lg shadow-sky-500/5 hover:shadow-2xl hover:shadow-sky-500/10 transition-all overflow-hidden h-full">
+                <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-white opacity-100"></div>
+                <div class="absolute -right-10 -top-10 w-32 h-32 rounded-full bg-sky-200/40 blur-2xl"></div>
+                <div class="relative">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-sky-500 flex items-center justify-center shadow-lg shadow-sky-500/30 group-hover:scale-105 transition-transform flex-shrink-0">
+                      <i class="fa-solid fa-magnifying-glass text-white text-lg"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-sky-600 bg-sky-100/70 px-2 py-1 rounded-full flex-shrink-0 ml-2">Visibility</span>
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-[#0F1629] break-words">Google Search Ready</h3>
+                  <p class="text-sm text-slate-600 leading-relaxed break-words">Search a student's name on Google and their portfolio appears. Built with SEO optimization so coaches find you instantly.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="min-w-full flex-shrink-0 px-14 sm:px-8">
+              <div class="group relative p-6 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-[#0F1629]/5 hover:shadow-2xl transition-all overflow-hidden h-full">
+                <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+                <div class="absolute -left-10 -bottom-10 w-36 h-36 rounded-full bg-sky-200/30 blur-2xl"></div>
+                <div class="relative">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center ring-1 ring-sky-200 group-hover:scale-105 transition-transform flex-shrink-0">
+                      <i class="fa-solid fa-user-astronaut text-sky-500 text-lg"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-2 py-1 rounded-full flex-shrink-0 ml-2">Snapshot</span>
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-[#0F1629] break-words">Athlete Overview</h3>
+                  <p class="text-sm text-slate-600 leading-relaxed break-words">Identity, contact info, sport basics, and bio at a glance.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="min-w-full flex-shrink-0 px-14 sm:px-8">
+              <div class="group relative p-6 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-[#0F1629]/5 hover:shadow-2xl transition-all overflow-hidden h-full">
+                <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+                <div class="relative">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center ring-1 ring-sky-200 group-hover:scale-105 transition-transform flex-shrink-0">
+                      <i class="fa-solid fa-graduation-cap text-sky-500 text-lg"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-2 py-1 rounded-full flex-shrink-0 ml-2">Credibility</span>
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-[#0F1629] break-words">Academics &amp; Character</h3>
+                  <p class="text-sm text-slate-600 leading-relaxed break-words">GPA, honors, leadership roles, and community impact.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="min-w-full flex-shrink-0 px-14 sm:px-8">
+              <div class="group relative p-6 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-[#0F1629]/5 hover:shadow-2xl transition-all overflow-hidden h-full">
+                <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+                <div class="relative">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center ring-1 ring-sky-200 group-hover:scale-105 transition-transform flex-shrink-0">
+                      <i class="fa-solid fa-chart-line text-sky-500 text-lg"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-2 py-1 rounded-full flex-shrink-0 ml-2">Proof</span>
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-[#0F1629] break-words">Performance Stats</h3>
+                  <p class="text-sm text-slate-600 leading-relaxed break-words">Verified MaxPreps/Hudl stats, or can be provided by you.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="min-w-full flex-shrink-0 px-14 sm:px-8">
+              <div class="group relative p-6 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-[#0F1629]/5 hover:shadow-2xl transition-all overflow-hidden h-full">
+                <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+                <div class="relative">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center ring-1 ring-sky-200 group-hover:scale-105 transition-transform flex-shrink-0">
+                      <i class="fa-solid fa-video text-sky-500 text-lg"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-2 py-1 rounded-full flex-shrink-0 ml-2">Media</span>
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-[#0F1629] break-words">Highlights &amp; Media</h3>
+                  <p class="text-sm text-slate-600 leading-relaxed break-words">Embedded game film, reels, and high-res action photos.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="min-w-full flex-shrink-0 px-14 sm:px-8">
+              <div class="group relative p-6 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-[#0F1629]/5 hover:shadow-2xl transition-all overflow-hidden h-full">
+                <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+                <div class="relative">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center ring-1 ring-sky-200 group-hover:scale-105 transition-transform flex-shrink-0">
+                      <i class="fa-solid fa-trophy text-sky-500 text-lg"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-2 py-1 rounded-full flex-shrink-0 ml-2">Results</span>
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-[#0F1629] break-words">Awards &amp; Recognition</h3>
+                  <p class="text-sm text-slate-600 leading-relaxed break-words">All-region awards, MVP honors, tournament wins, and verified coach endorsements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button id="coaches-prev-btn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-sky-500 rounded-full p-2 shadow-lg transition-all z-10 opacity-80 hover:opacity-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button id="coaches-next-btn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-sky-500 rounded-full p-2 shadow-lg transition-all z-10 opacity-80 hover:opacity-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <!-- Indicators -->
+        <div id="coaches-indicators" class="flex justify-center gap-2 mt-6">
+          <button class="w-2 h-2 rounded-full bg-sky-500 transition-all" data-slide="0"></button>
+          <button class="w-2 h-2 rounded-full bg-sky-200 transition-all" data-slide="1"></button>
+          <button class="w-2 h-2 rounded-full bg-sky-200 transition-all" data-slide="2"></button>
+          <button class="w-2 h-2 rounded-full bg-sky-200 transition-all" data-slide="3"></button>
+          <button class="w-2 h-2 rounded-full bg-sky-200 transition-all" data-slide="4"></button>
+          <button class="w-2 h-2 rounded-full bg-sky-200 transition-all" data-slide="5"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Demo Teaser -->
+  <section class="py-24 bg-[#0F1629] text-white overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="text-4xl md:text-6xl font-anton mb-6 uppercase leading-tight">
+          Preview Your <span class="text-sky-500">Custom Portfolio</span>
+        </h2>
+        <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+          Try our interactive demo to explore layout options and color schemes. This preview gives you a feel for the style—your actual portfolio will be fully custom-built, professionally designed, and tailored to showcase your unique story with detailed stats, photos, and achievements.
+        </p>
+        <a href="demo/"
+          class="inline-flex items-center gap-3 px-8 py-4 bg-sky-500 text-[#0F1629] font-bold rounded-lg text-lg uppercase tracking-wider hover:bg-sky-400 transition-all">
+          Try Interactive Demo <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="relative">
+        <div class="bg-slate-800 rounded-2xl p-4 shadow-2xl border border-slate-700 max-w-sm mx-auto transform rotate-2">
+          <div class="rounded-xl overflow-hidden shadow-inner h-[500px] bg-cover" style="background-image: url('images/johnlemonspage2.png'); background-position: 50% 35%;">
+          </div>
+        </div>
+        <!-- Floating labels -->
+        <div class="absolute top-10 left-0 bg-sky-500 text-[#0F1629] px-4 py-2 rounded-full font-bold shadow-lg -rotate-12">
+          Drag to Reorder
+        </div>
+        <div class="absolute bottom-20 right-0 bg-white text-[#0F1629] px-4 py-2 rounded-full font-bold shadow-lg rotate-6">
+          One-Click Colors
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why it works -->
+  <section class="py-12 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+        <div>
+          <i class="fa-solid fa-mobile-screen-button text-4xl text-sky-500 mb-6"></i>
+          <h4 class="text-xl font-bold mb-3">Mobile-First</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">Coaches review profiles on their phones at fields. We build for that.</p>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-bolt text-4xl text-sky-500 mb-6"></i>
+          <h4 class="text-xl font-bold mb-3">15-Second Rule</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">Clean layouts that communicate your value in the time it takes to walk to a car.</p>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-share-nodes text-4xl text-sky-500 mb-6"></i>
+          <h4 class="text-xl font-bold mb-3">Single Link</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">No PDF attachments or massive emails. One professional link for life.</p>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-clock-rotate-left text-4xl text-sky-500 mb-6"></i>
+          <h4 class="text-xl font-bold mb-3">Updated Monthly</h4>
+          <p class="text-slate-600 text-sm leading-relaxed"><span class="text-sky-500">*</span> With the Recruiting Profile Care plan, keep your stats and film fresh all season.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-12 md:py-24 bg-sky-500">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-6xl font-anton text-[#0F1629] mb-8 uppercase">Ready to stand out?</h2>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a href="contact/"
+          class="px-12 py-5 bg-[#0F1629] text-white font-bold rounded-xl text-xl uppercase tracking-widest hover:bg-slate-800 transition-all">
+          Book a Build
+        </a>
+        <a href="demo/"
+          class="px-12 py-5 bg-white text-[#0F1629] font-bold rounded-xl text-xl uppercase tracking-widest hover:bg-slate-100 transition-all border-2 border-[#0F1629]">
+          Play in Demo
+        </a>
+      </div>
+    </div>
+  </section>
+
+    <footer class="bg-white text-slate-700 pt-16 pb-8 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-1">
+                <a href="./" class="flex items-center gap-2 mb-6">
+                    <img src="images/upward-athlete-transparent-logo.png" alt="Upward Athlete logo" class="h-12 w-auto" />
+                    <span class="text-2xl font-anton tracking-tight text-[#0F1629]">UPWARD ATHLETE</span>
+                </a>
+                <p class="text-sm leading-relaxed mb-6">
+                    Mobile-first student-athlete profiles designed to present performance, academics, and potential with
+                    clarity and purpose.
+                </p>
+</div>
+
+            <div>
+                <h4 class="text-[#0F1629] font-bold uppercase tracking-widest text-sm mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-sm">
+                    <li>
+                        <a href="./" class="hover:text-sky-500 transition-colors">Home</a>
+                    </li>
+                    <li>
+                        <a href="demo/" class="hover:text-sky-500 transition-colors">Interactive Demo</a>
+                    </li>
+                    <li>
+                        <a href="examples/" class="hover:text-sky-500 transition-colors">Example Gallery</a>
+                    </li>
+                    <li>
+                        <a href="services/" class="hover:text-sky-500 transition-colors">Services & Pricing</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-[#0F1629] font-bold uppercase tracking-widest text-sm mb-6">Support</h4>
+                <ul class="space-y-4 text-sm">
+                    <li>
+                        <a href="process/" class="hover:text-sky-500 transition-colors">How It Works</a>
+                    </li>
+                    <li>
+                        <a href="faq/" class="hover:text-sky-500 transition-colors">Frequently Asked Questions</a>
+                    </li>
+                    <li>
+                        <a href="contact/" class="hover:text-sky-500 transition-colors">Request a Quote</a>
+                    </li>
+                    <li>
+                        <a href="mailto:jkubon8698@gmail.com" class="hover:text-sky-500 transition-colors">Email Support</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-[#0F1629] font-bold uppercase tracking-widest text-sm mb-6">Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-phone mt-1 text-sky-500"></i>
+                        <span>864-354-5995</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-envelope mt-1 text-sky-500"></i>
+                        <span>jkubon8698@gmail.com</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-globe mt-1 text-sky-500"></i>
+                        <span>upwardathlete.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-slate-200 text-center text-xs text-slate-500">
+            <p>&copy; 2026 Upward Athlete. All rights reserved. | Professional Portfolios for Student-Athletes</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuButton.addEventListener('click', function () {
+            const isHidden = mobileMenu.classList.contains('hidden');
+
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Coaches Carousel (Mobile Auto-play)
+        function initCoachesCarousel() {
+            const coachesSlider = document.getElementById('coaches-slider');
+            const coachesPrevBtn = document.getElementById('coaches-prev-btn');
+            const coachesNextBtn = document.getElementById('coaches-next-btn');
+            const coachesIndicators = document.querySelectorAll('#coaches-indicators button');
+            const coachesCarousel = document.getElementById('coaches-carousel');
+            
+            if (!coachesSlider || !coachesCarousel || window.innerWidth >= 768) {
+                return; // Exit if not on mobile or element doesn't exist
+            }
+            let coachesCurrentSlide = 0;
+            let coachesAutoPlayInterval;
+            let coachesUserInteracted = false;
+            const totalCoachesSlides = 6;
+
+            function updateCoachesCarousel() {
+                // Get the carousel container width
+                const containerWidth = coachesCarousel.offsetWidth || window.innerWidth;
+                
+                // Move by one card width (100% of container)
+                const translateX = coachesCurrentSlide * containerWidth;
+                coachesSlider.style.transform = `translateX(-${translateX}px)`;
+                
+                // Update indicators
+                coachesIndicators.forEach((indicator, index) => {
+                    if (index === coachesCurrentSlide) {
+                        indicator.classList.remove('bg-sky-200');
+                        indicator.classList.add('bg-sky-500');
+                        indicator.style.width = '0.75rem';
+                    } else {
+                        indicator.classList.remove('bg-sky-500');
+                        indicator.classList.add('bg-sky-200');
+                        indicator.style.width = '0.5rem';
+                    }
+                });
+            }
+
+            function nextCoachesSlide() {
+                coachesCurrentSlide = (coachesCurrentSlide + 1) % totalCoachesSlides;
+                updateCoachesCarousel();
+            }
+
+            function startCoachesAutoPlay() {
+                if (!coachesUserInteracted) {
+                    coachesAutoPlayInterval = setInterval(nextCoachesSlide, 3000);
+                }
+            }
+
+            function stopCoachesAutoPlay() {
+                clearInterval(coachesAutoPlayInterval);
+                coachesUserInteracted = true;
+            }
+
+            // Navigation buttons
+            coachesPrevBtn?.addEventListener('click', () => {
+                stopCoachesAutoPlay();
+                coachesCurrentSlide = (coachesCurrentSlide - 1 + totalCoachesSlides) % totalCoachesSlides;
+                updateCoachesCarousel();
+            });
+
+            coachesNextBtn?.addEventListener('click', () => {
+                stopCoachesAutoPlay();
+                nextCoachesSlide();
+            });
+
+            // Indicator clicks
+            coachesIndicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    stopCoachesAutoPlay();
+                    coachesCurrentSlide = index;
+                    updateCoachesCarousel();
+                });
+            });
+
+            // Touch/swipe detection - stop auto-play on any touch
+            let coachesTouchStartX = 0;
+            let coachesTouchEndX = 0;
+
+            coachesSlider.addEventListener('touchstart', (e) => {
+                stopCoachesAutoPlay();
+                coachesTouchStartX = e.changedTouches[0].screenX;
+            });
+
+            coachesSlider.addEventListener('touchend', (e) => {
+                stopCoachesAutoPlay();
+                coachesTouchEndX = e.changedTouches[0].screenX;
+                handleCoachesSwipe();
+            });
+
+            // Stop auto-play on any click/touch in the carousel
+            coachesSlider.addEventListener('click', stopCoachesAutoPlay);
+            coachesSlider.addEventListener('mousedown', stopCoachesAutoPlay);
+            coachesCarousel.addEventListener('click', stopCoachesAutoPlay);
+            coachesCarousel.addEventListener('mousedown', stopCoachesAutoPlay);
+            coachesCarousel.addEventListener('touchstart', stopCoachesAutoPlay);
+
+            function handleCoachesSwipe() {
+                const swipeThreshold = 50;
+                if (coachesTouchEndX < coachesTouchStartX - swipeThreshold) {
+                    nextCoachesSlide();
+                } else if (coachesTouchEndX > coachesTouchStartX + swipeThreshold) {
+                    coachesCurrentSlide = (coachesCurrentSlide - 1 + totalCoachesSlides) % totalCoachesSlides;
+                    updateCoachesCarousel();
+                }
+            }
+
+            // Start auto-play
+            startCoachesAutoPlay();
+            updateCoachesCarousel();
+
+            // Stop on any mouse interaction (hover, enter, etc.)
+            coachesCarousel.addEventListener('mouseenter', stopCoachesAutoPlay);
+            coachesCarousel.addEventListener('mouseover', stopCoachesAutoPlay);
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth < 768) {
+                    updateCoachesCarousel();
+                }
+            });
+        }
+        
+        function initHeroAudienceRotator() {
+            const audienceWord = document.getElementById('hero-audience-word');
+            if (!audienceWord) return;
+
+            const audiences = ['COLLEGES', 'RECRUITERS', 'COACHES'];
+            let audienceIndex = 0;
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            setInterval(() => {
+                audienceIndex = (audienceIndex + 1) % audiences.length;
+                if (prefersReducedMotion || typeof gsap === 'undefined') {
+                    audienceWord.textContent = audiences[audienceIndex];
+                    return;
+                }
+
+                gsap.to(audienceWord, {
+                    y: -8,
+                    opacity: 0,
+                    duration: 0.28,
+                    ease: 'power3.out',
+                    onComplete: () => {
+                        audienceWord.textContent = audiences[audienceIndex];
+                        gsap.fromTo(
+                            audienceWord,
+                            { y: 8, opacity: 0 },
+                            { y: 0, opacity: 1, duration: 0.35, ease: 'power3.out' }
+                        );
+                    }
+                });
+            }, 5000);
+        }
+
+        // Initialize hero text and carousel when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                initHeroAudienceRotator();
+                initCoachesCarousel();
+            });
+        } else {
+            initHeroAudienceRotator();
+            initCoachesCarousel();
+        }
+    </script>
+</body>
+
+</html>

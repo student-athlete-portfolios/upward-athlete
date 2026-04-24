@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-01CSEG65BV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-01CSEG65BV');
+    </script>
+    <title>Process - Upward Athlete</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'anton': ['Anton', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+            <div class="px-4 sm:px-6 lg:px-8">
+              <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                  <a href="../" class="flex-shrink-0 flex items-center gap-2 ml-2">
+                            <img src="../images/upward-athlete-horizontal-transparent-logo.png" alt="Upward Athlete logo" class="h-[3.25rem] w-auto" />
+                        </a>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-4">
+                  <a href="../" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Home</a>
+                  <a href="../demo/" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Demo</a>
+                  <a href="../examples/" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Examples</a>
+                  <a href="../services/" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Services</a>
+                  <a href="../process/" class="px-3 py-2 text-sm font-bold text-[#0F1629] hover:text-sky-500 transition-colors">Process</a>
+                  <a href="../faq/" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">FAQ</a>
+                </div>
+      
+                <div class="flex items-center space-x-3">
+                  <a href="../demo/" class="hidden sm:inline-flex items-center px-4 py-2 border border-transparent text-sm font-bold rounded-md text-[#0F1629] bg-sky-400 hover:bg-sky-500 transition-all uppercase tracking-wider">
+                    Try Demo
+                  </a>
+                  <a href="../contact/" class="inline-flex items-center px-4 py-2 border border-[#0F1629] text-sm font-bold rounded-md text-white bg-[#0F1629] hover:bg-slate-800 transition-all uppercase tracking-wider">
+                    Book Now
+                  </a>
+                  <button id="mobile-menu-button" class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-[#0F1629] hover:text-sky-500 transition-colors" aria-label="Menu">
+                    <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Mobile Menu -->
+              <div id="mobile-menu" class="hidden lg:hidden pb-4 border-t border-slate-200 mt-2">
+                <div class="flex flex-col space-y-2 pt-4">
+                  <a href="../" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Home</a>
+                  <a href="../demo/" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Demo</a>
+                  <a href="../examples/" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Examples</a>
+                  <a href="../services/" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">Services</a>
+                  <a href="../process/" class="px-3 py-2 text-sm font-bold text-[#0F1629] hover:text-sky-500 transition-colors">Process</a>
+                  <a href="../faq/" class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-sky-500 transition-colors">FAQ</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div class="bg-slate-50 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h1 class="text-5xl font-anton mb-4">Your Profile. Built Right the First Time.</h1>
+          <p class="text-xl text-slate-600">A simple process designed to take you from “unknown” to “recruit-ready.”</p>
+          <div class="w-24 h-2 bg-sky-500 mx-auto mt-6"></div>
+        </div>
+
+        <div class="relative mb-16">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-10 relative z-10" id="steps-container">
+            <!-- Steps will be inserted here -->
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+           <div class="bg-white p-12 rounded-[2.5rem] shadow-xl border border-slate-200">
+              <h2 class="text-3xl font-anton mb-8 uppercase">Ready to get started?</h2>
+              <p class="text-slate-600 mb-8">Before we begin, ensure you have the following ready to share:</p>
+              <ul class="space-y-4 mb-8" id="checklist-container">
+                 <!-- Checklist items will be inserted here -->
+              </ul>
+              <a href="../contact/" class="block w-full text-center py-5 bg-[#0F1629] text-white font-bold rounded-2xl uppercase tracking-widest hover:bg-slate-800 transition-all shadow-lg">
+                 Book Now
+              </a>
+           </div>
+
+           <div>
+              <h3 class="text-2xl font-anton mb-6 uppercase tracking-widest">Why professional portfolios?</h3>
+              <div class="space-y-8" id="why-container">
+                 <!-- Why items will be inserted here -->
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-white text-slate-700 pt-16 pb-8 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-1">
+                <a href="../" class="flex items-center gap-2 mb-6">
+                    <img src="../images/upward-athlete-transparent-logo.png" alt="Upward Athlete logo" class="h-12 w-auto" />
+                    <span class="text-2xl font-anton tracking-tight text-[#0F1629]">UPWARD ATHLETE</span>
+                </a>
+                <p class="text-sm leading-relaxed mb-6">
+                    Mobile-first student-athlete profiles designed to present performance, academics, and potential with
+                    clarity and purpose.
+                </p>
+</div>
+
+            <div>
+                <h4 class="text-[#0F1629] font-bold uppercase tracking-widest text-sm mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-sm">
+                    <li>
+                        <a href="../" class="hover:text-sky-500 transition-colors">Home</a>
+                    </li>
+                    <li>
+                        <a href="../demo/" class="hover:text-sky-500 transition-colors">Interactive Demo</a>
+                    </li>
+                    <li>
+                        <a href="../examples/" class="hover:text-sky-500 transition-colors">Example Gallery</a>
+                    </li>
+                    <li>
+                        <a href="../services/" class="hover:text-sky-500 transition-colors">Services & Pricing</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-[#0F1629] font-bold uppercase tracking-widest text-sm mb-6">Support</h4>
+                <ul class="space-y-4 text-sm">
+                    <li>
+                        <a href="../process/" class="hover:text-sky-500 transition-colors">How It Works</a>
+                    </li>
+                    <li>
+                        <a href="../faq/" class="hover:text-sky-500 transition-colors">Frequently Asked Questions</a>
+                    </li>
+                    <li>
+                        <a href="../contact/" class="hover:text-sky-500 transition-colors">Request a Quote</a>
+                    </li>
+                    <li>
+                        <a href="mailto:jkubon8698@gmail.com" class="hover:text-sky-500 transition-colors">Email Support</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-[#0F1629] font-bold uppercase tracking-widest text-sm mb-6">Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-phone mt-1 text-sky-500"></i>
+                        <span>864-354-5995</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-envelope mt-1 text-sky-500"></i>
+                        <span>jkubon8698@gmail.com</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-globe mt-1 text-sky-500"></i>
+                        <span>upwardathlete.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-slate-200 text-center text-xs text-slate-500">
+            <p>&copy; 2026 Upward Athlete. All rights reserved. | Professional Portfolios for Student-Athletes</p>
+        </div>
+    </footer>
+
+    <script>
+        // Steps data
+        const steps = [
+            {
+                step: '1',
+                icon: 'fa-solid fa-rocket',
+                title: 'Start Your Way',
+                subtitle: 'Book a Call or Jump Right In',
+                type: 'dual',
+                options: [
+                    {
+                        icon: 'fa-solid fa-phone',
+                        label: 'Talk First',
+                        items: ['Free 20-min discovery call', 'Walk through your goals', 'Preview your profile live']
+                    },
+                    {
+                        icon: 'fa-solid fa-bolt',
+                        label: 'Start Now',
+                        items: ['Fill out the intake form', 'We start building right away']
+                    }
+                ]
+            },
+            {
+                step: '2',
+                icon: 'fa-solid fa-pen-ruler',
+                title: 'Build Your Profile',
+                subtitle: 'We Turn Your Info Into a Recruiting Asset',
+                type: 'two-col',
+                provide: {
+                    label: 'You Provide',
+                    items: ['Stats & highlights', 'Academic snapshot', 'Background & bio']
+                },
+                build: {
+                    label: 'We Build',
+                    items: ['Mobile-first profile', 'Coach-ready structure', 'Searchable by name']
+                }
+            },
+            {
+                step: '3',
+                icon: 'fa-solid fa-circle-check',
+                title: 'Review & Launch',
+                subtitle: 'You Approve Before It Goes Live',
+                type: 'flow',
+                items: [
+                    'We send your finished profile',
+                    'You request any edits',
+                    'You give the green light',
+                    'Profile goes live'
+                ]
+            },
+            {
+                step: '4',
+                icon: 'fa-solid fa-bullseye',
+                title: 'Get Seen',
+                subtitle: 'One Link. Everywhere It Matters.',
+                type: 'targets',
+                sendTo: ['Coach emails', 'Recruiting portals', 'Social bios', 'Team programs'],
+                result: 'Coaches search your name — your profile is the first thing they find.'
+            }
+        ];
+
+        // Checklist data
+        const checklistItems = [
+            'Stats source via MaxPreps, Hudl, or self-reported',
+            'Academic snapshot (GPA, honors)',
+            'Current team & coach contact info',
+            'Links to your top game highlights',
+            '3–5 high-quality action photos (unless photo package is purchased)',
+            'Brief personal statement or bio'
+        ];
+
+        // Why items data
+        const whyItems = [
+            { title: 'The 15-Second Rule', desc: 'Coaches are busy. We ensure your most critical value propositions are seen in the first 15 seconds of a visit.' },
+            { title: 'Your Digital Trading Card', desc: 'Having your own portfolio is our generation\'s version of a trading card — a unique, professional showcase that sets you apart.' },
+            { title: 'Mobile Reality', desc: 'Most recruiting links are clicked at games or on buses. If your site isn\'t perfect on mobile, it doesn\'t exist.' }
+        ];
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        function buildDual(s) {
+            return s.options.map((opt, idx) => `
+                ${idx > 0 ? `
+                <div class="flex items-center justify-center py-1">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">OR</span>
+                </div>` : ''}
+                <div class="bg-slate-50 rounded-xl p-3 text-left">
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <i class="${opt.icon} text-sky-500 text-xs"></i>
+                        <span class="text-[11px] font-bold uppercase tracking-wide text-[#0F1629]">${opt.label}</span>
+                    </div>
+                    <ul class="space-y-1">
+                        ${opt.items.map(item => `
+                            <li class="flex items-start gap-1 text-xs text-slate-600 leading-snug">
+                                <span class="text-sky-500 shrink-0 mt-px">·</span>${item}
+                            </li>`).join('')}
+                    </ul>
+                </div>`).join('');
+        }
+
+        function buildTwoCol(s) {
+            const col = (data, accent) => `
+                <div class="rounded-xl p-3 text-left ${accent ? 'bg-sky-50' : 'bg-slate-50'}">
+                    <p class="text-[10px] font-bold uppercase tracking-widest mb-2 ${accent ? 'text-sky-500' : 'text-slate-400'}">${data.label}</p>
+                    <ul class="space-y-1.5">
+                        ${data.items.map(item => `
+                            <li class="flex items-start gap-1.5 text-xs text-slate-700 leading-snug">
+                                <span class="${accent ? 'text-sky-500' : 'text-slate-400'} shrink-0 mt-px">${accent ? '✓' : '→'}</span>${item}
+                            </li>`).join('')}
+                    </ul>
+                </div>`;
+            return col(s.provide, false) + col(s.build, true);
+        }
+
+        function buildFlow(s) {
+            return s.items.map((item, idx) => {
+                const isLast = idx === s.items.length - 1;
+                const badge = isLast
+                    ? `<div class="w-5 h-5 rounded-full bg-sky-500 flex items-center justify-center shrink-0"><i class="fa-solid fa-check text-[9px] text-white"></i></div>`
+                    : `<div class="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center shrink-0"><span class="text-[10px] font-bold text-slate-500">${idx + 1}</span></div>`;
+                const connector = !isLast ? `<div class="w-px h-3 bg-slate-200 ml-[9px]"></div>` : '';
+                const label = isLast
+                    ? `<p class="text-xs font-semibold text-sky-500 leading-snug">${item}</p>`
+                    : `<p class="text-xs text-slate-600 leading-snug">${item}</p>`;
+                return `
+                    <div>
+                        <div class="flex items-center gap-2">${badge}${label}</div>
+                        ${connector}
+                    </div>`;
+            }).join('');
+        }
+
+        function buildTargets(s) {
+            const grid = s.sendTo.map(t => `
+                <div class="bg-slate-50 rounded-lg px-2 py-1.5 flex items-center gap-1.5 text-xs text-slate-600">
+                    <i class="fa-solid fa-arrow-right text-sky-500 text-[10px] shrink-0"></i>${t}
+                </div>`).join('');
+            return `
+                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 mt-1">Send your link to</p>
+                <div class="grid grid-cols-2 gap-1.5 mb-3">${grid}</div>
+                <div class="bg-sky-50 border border-sky-200 rounded-xl p-2.5">
+                    <p class="text-xs text-sky-600 font-medium italic leading-snug">"${s.result}"</p>
+                </div>`;
+        }
+
+        // Render steps
+        function renderSteps() {
+            const container = document.getElementById('steps-container');
+            container.innerHTML = steps.map(s => {
+                let inner = '';
+                if (s.type === 'dual')     inner = `<div class="grid grid-cols-1 gap-2 mt-3">${buildDual(s)}</div>`;
+                if (s.type === 'two-col')  inner = `<div class="grid grid-cols-1 gap-2 mt-3">${buildTwoCol(s)}</div>`;
+                if (s.type === 'flow')     inner = `<div class="mt-3 text-left">${buildFlow(s)}</div>`;
+                if (s.type === 'targets')  inner = `<div class="mt-3 text-left">${buildTargets(s)}</div>`;
+
+                return `
+                    <div class="bg-white px-5 pt-4 pb-5 rounded-3xl shadow-lg border border-slate-200 text-center group transform-gpu transition-transform duration-300 hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-sky-500 text-[#0F1629] rounded-full flex items-center justify-center font-anton text-2xl mx-auto -mt-10 mb-3 group-hover:scale-110 transition-transform shadow-md">
+                            ${s.step}
+                        </div>
+                        <i class="${s.icon} text-sky-500 text-base mb-2 block"></i>
+                        <h3 class="text-lg font-anton leading-tight">${s.title}</h3>
+                        <p class="text-xs text-slate-500 font-semibold leading-snug mt-1 mb-0">${s.subtitle}</p>
+                        ${inner}
+                    </div>`;
+            }).join('');
+        }
+
+        // Render checklist
+        function renderChecklist() {
+            const container = document.getElementById('checklist-container');
+            container.innerHTML = checklistItems.map(item => `
+                <li class="flex items-start gap-3">
+                    <div class="w-5 h-5 rounded bg-sky-100 flex items-center justify-center mt-0.5 shrink-0">
+                        <i class="fa-solid fa-check text-xs text-sky-500"></i>
+                    </div>
+                    <span class="text-slate-700 font-medium">${item}</span>
+                </li>`).join('');
+        }
+
+        // Render why items
+        function renderWhyItems() {
+            const container = document.getElementById('why-container');
+            container.innerHTML = whyItems.map(p => `
+                <div>
+                    <h4 class="font-bold text-[#0F1629] mb-2">${p.title}</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">${p.desc}</p>
+                </div>`).join('');
+        }
+
+        renderSteps();
+        renderChecklist();
+        renderWhyItems();
+    </script>
+</body>
+</html>
