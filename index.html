@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -177,7 +178,7 @@
     <!-- Everything Coaches Need -->
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-8">
-        <h2 class="text-4xl md:text-5xl font-anton mb-4">Everything Coaches Need</h2>
+        <h2 class="text-4xl md:text-5xl text-[#0F1629] font-anton mb-4">Everything Coaches Need</h2>
         <span class="block w-48 h-2 rounded-full bg-sky-500 mx-auto"></span>
       </div>
   
@@ -483,36 +484,80 @@
     </div>
   </section>
 
-  <!-- Interactive Demo Teaser -->
-  <section class="py-24 bg-[#0F1629] text-white overflow-hidden relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <div>
-        <h2 class="text-4xl md:text-6xl font-anton mb-6 uppercase leading-tight">
-          Preview Your <span class="text-sky-500">Custom Portfolio</span>
-        </h2>
-        <p class="text-xl text-slate-300 mb-8 leading-relaxed">
-          Try our interactive demo to explore layout options and color schemes. This preview gives you a feel for the style—your actual portfolio will be fully custom-built, professionally designed, and tailored to showcase your unique story with detailed stats, photos, and achievements.
-        </p>
-        <a href="demo/"
-          class="inline-flex items-center gap-3 px-8 py-4 bg-sky-500 text-[#0F1629] font-bold rounded-lg text-lg uppercase tracking-wider hover:bg-sky-400 transition-all">
-          Try Interactive Demo <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-      <div class="relative">
-        <div class="bg-slate-800 rounded-2xl p-4 shadow-2xl border border-slate-700 max-w-sm mx-auto transform rotate-2">
-          <div class="rounded-xl overflow-hidden shadow-inner h-[500px] bg-cover" style="background-image: url('images/johnlemonspage2.png'); background-position: 50% 35%;">
-          </div>
-        </div>
-        <!-- Floating labels -->
-        <div class="absolute top-10 left-0 bg-sky-500 text-[#0F1629] px-4 py-2 rounded-full font-bold shadow-lg -rotate-12">
-          Drag to Reorder
-        </div>
-        <div class="absolute bottom-20 right-0 bg-white text-[#0F1629] px-4 py-2 rounded-full font-bold shadow-lg rotate-6">
-          One-Click Colors
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Why This Matters -->
+        <section class="relative py-16 md:py-24 bg-[#0F1629] text-white overflow-hidden">
+            <!-- Faint grid/texture background -->
+            <div class="absolute inset-0 pointer-events-none opacity-30" style="background-image:
+                linear-gradient(to right, rgba(148,163,184,0.14) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(148,163,184,0.14) 1px, transparent 1px);
+                background-size: 34px 34px;">
+            </div>
+            <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-sky-500/10 blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-sky-500/10 blur-3xl pointer-events-none"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="w-full mb-12 md:mb-16">
+                    <p class="text-xs md:text-sm uppercase tracking-[0.24em] font-bold text-sky-400 mb-4">Why This Matters</p>
+                    <h2 class="text-5xl md:text-7xl font-anton tracking-tight text-white leading-[1.02] mb-6">
+                        Coaches Make Decisions in Seconds.<br>
+                    </h2>
+                    <h3 class="text-4xl md:text-5xl font-anton tracking-tight text-sky-400 leading-[1.02] mb-6">
+                        Most Athletes Give Them Nothing to Work With.
+                    </h3>
+                    <p class="text-lg md:text-xl text-slate-300 leading-relaxed mb-6">
+                        Every year, college coaches review thousands of prospects. They don't have time to dig. They open a link, scan for 15 seconds, and decide whether to keep looking or move on.
+                    </p>
+                    <p class="text-lg md:text-xl text-slate-300 leading-relaxed">
+                        Right now, most student-athletes have no control over what shows up when a coach searches their name. A MaxPreps page they never set up. An incomplete Hudl profile. Maybe nothing at all.
+                    </p>
+                    <p class="text-lg md:text-xl text-slate-300 leading-relaxed mt-6">
+                        That's not a recruiting strategy — that's leaving one of the most important decisions of your athlete's life to chance.
+                    </p>
+                    <p class="text-lg md:text-xl text-slate-300 leading-relaxed mt-6">
+                        And if a coach Googles your athlete's name right now — whatever the internet decides to show is what they see. You didn't build it. You didn't choose it. It just exists.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                    <article class="why-matters-card group relative bg-slate-800/60 border border-slate-700/70 rounded-2xl p-6 md:p-7 shadow-lg overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-800/80 via-slate-800/40 to-slate-800/0"></div>
+                        <div class="relative">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center shadow-lg shadow-rose-500/20 group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-xmark text-rose-400 text-xl"></i>
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-widest text-rose-400 bg-rose-500/10 px-3 py-1 rounded-full">Problem</span>
+                            </div>
+                            <p class="text-lg font-bold text-white leading-snug">Coaches can't find them, even when they're good enough</p>
+                        </div>
+                    </article>
+                    <article class="why-matters-card group relative bg-slate-800/60 border border-slate-700/70 rounded-2xl p-6 md:p-7 shadow-lg overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-800/80 via-slate-800/40 to-slate-800/0"></div>
+                        <div class="relative">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center shadow-lg shadow-rose-500/20 group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-xmark text-rose-400 text-xl"></i>
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-widest text-rose-400 bg-rose-500/10 px-3 py-1 rounded-full">Problem</span>
+                            </div>
+                            <p class="text-lg font-bold text-white leading-snug">First impressions are left to incomplete, uncontrolled sources</p>
+                        </div>
+                    </article>
+                    <article class="why-matters-card group relative bg-slate-800/60 border border-slate-700/70 rounded-2xl p-6 md:p-7 shadow-lg overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-800/80 via-slate-800/40 to-slate-800/0"></div>
+                        <div class="relative">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center shadow-lg shadow-rose-500/20 group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-xmark text-rose-400 text-xl"></i>
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-widest text-rose-400 bg-rose-500/10 px-3 py-1 rounded-full">Problem</span>
+                            </div>
+                            <p class="text-lg font-bold text-white leading-snug">Athletes who look polished on paper get the call instead</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
   <!-- Why it works -->
   <section class="py-12 md:py-24 bg-white">
@@ -540,6 +585,37 @@
           <i class="fa-solid fa-clock-rotate-left text-4xl text-sky-500 mb-6"></i>
           <h4 class="text-xl font-bold mb-3">Updated Monthly</h4>
           <p class="text-slate-600 text-sm leading-relaxed"><span class="text-sky-500">*</span> With the Recruiting Profile Care plan, keep your stats and film fresh all season.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Demo Teaser -->
+  <section class="py-24 bg-[#0F1629] text-white overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="text-4xl md:text-6xl font-anton mb-6 uppercase leading-tight">
+          Preview Your <span class="text-sky-500">Custom Portfolio</span>
+        </h2>
+        <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+          Try our interactive demo to explore layout options and color schemes. This preview gives you a feel for the style—your actual portfolio will be fully custom-built, professionally designed, and tailored to showcase your unique story with detailed stats, photos, and achievements.
+        </p>
+        <a href="demo/"
+          class="inline-flex items-center gap-3 px-8 py-4 bg-sky-500 text-[#0F1629] font-bold rounded-lg text-lg uppercase tracking-wider hover:bg-sky-400 transition-all">
+          Try Interactive Demo <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="relative">
+        <div class="bg-slate-800 rounded-2xl p-4 shadow-2xl border border-slate-700 max-w-sm mx-auto transform rotate-2">
+          <div class="rounded-xl overflow-hidden shadow-inner h-[500px] bg-cover" style="background-image: url('images/johnlemonspage2.png'); background-position: 50% 35%;">
+          </div>
+        </div>
+        <!-- Floating labels -->
+        <div class="absolute top-10 left-0 bg-sky-500 text-[#0F1629] px-4 py-2 rounded-full font-bold shadow-lg -rotate-12">
+          Drag to Reorder
+        </div>
+        <div class="absolute bottom-20 right-0 bg-white text-[#0F1629] px-4 py-2 rounded-full font-bold shadow-lg rotate-6">
+          One-Click Colors
         </div>
       </div>
     </div>
@@ -641,6 +717,10 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
 
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+        }
+
         mobileMenuButton.addEventListener('click', function () {
             const isHidden = mobileMenu.classList.contains('hidden');
 
@@ -656,6 +736,7 @@
         });
 
         // Coaches Carousel (Mobile Auto-play)
+        let coachesCarouselInitialized = false;
         function initCoachesCarousel() {
             const coachesSlider = document.getElementById('coaches-slider');
             const coachesPrevBtn = document.getElementById('coaches-prev-btn');
@@ -663,9 +744,10 @@
             const coachesIndicators = document.querySelectorAll('#coaches-indicators button');
             const coachesCarousel = document.getElementById('coaches-carousel');
             
-            if (!coachesSlider || !coachesCarousel || window.innerWidth >= 768) {
-                return; // Exit if not on mobile or element doesn't exist
+            if (!coachesSlider || !coachesCarousel || window.innerWidth >= 768 || coachesCarouselInitialized) {
+                return; // Exit if not on mobile, already initialized, or element doesn't exist
             }
+            coachesCarouselInitialized = true;
             let coachesCurrentSlide = 0;
             let coachesAutoPlayInterval;
             let coachesUserInteracted = false;
@@ -807,7 +889,51 @@
                         );
                     }
                 });
-            }, 5000);
+            }, 3000);
+        }
+
+        function initWhyMattersAnimation() {
+            const cards = document.querySelectorAll('.why-matters-card');
+            const resolution = document.getElementById('why-matters-resolution');
+
+            if (!cards.length || typeof gsap === 'undefined') return;
+
+            gsap.set(cards, { y: 24, opacity: 0 });
+            if (resolution) gsap.set(resolution, { y: 18, opacity: 0, scale: 0.98 });
+
+            const hasScrollTrigger = gsap && gsap.plugins && gsap.plugins.ScrollTrigger;
+            if (hasScrollTrigger) {
+                gsap.to(cards, {
+                    y: 0,
+                    opacity: 1,
+                    stagger: 0.16,
+                    duration: 0.55,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: cards[0],
+                        start: 'top 82%',
+                        once: true
+                    }
+                });
+
+                if (resolution) {
+                    gsap.to(resolution, {
+                        y: 0,
+                        opacity: 1,
+                        scale: 1,
+                        duration: 0.6,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: resolution,
+                            start: 'top 88%',
+                            once: true
+                        }
+                    });
+                }
+            } else {
+                gsap.to(cards, { y: 0, opacity: 1, stagger: 0.16, duration: 0.55, ease: 'power3.out' });
+                if (resolution) gsap.to(resolution, { y: 0, opacity: 1, scale: 1, duration: 0.6, delay: 0.2, ease: 'power3.out' });
+            }
         }
 
         // Initialize hero text and carousel when DOM is ready
@@ -815,11 +941,20 @@
             document.addEventListener('DOMContentLoaded', () => {
                 initHeroAudienceRotator();
                 initCoachesCarousel();
+                initWhyMattersAnimation();
             });
         } else {
             initHeroAudienceRotator();
             initCoachesCarousel();
+            initWhyMattersAnimation();
         }
+
+        // Ensure carousel initializes when entering mobile viewport after initial load
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 768) {
+                initCoachesCarousel();
+            }
+        });
     </script>
 </body>
 
