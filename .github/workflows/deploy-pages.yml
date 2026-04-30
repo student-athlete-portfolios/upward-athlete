@@ -29,7 +29,7 @@ jobs:
 
       - name: Inject BOOK_NOW_FORM_KEY into contact form
         env:
-          BOOK_NOW_FORM_KEY: ${{ secrets.BOOK_NOW_FORM_KEY }}
+          BOOK_NOW_FORM_KEY: ${{ vars.BOOK_NOW_FORM_KEY }}
         run: |
           python3 << 'PY'
           import os
