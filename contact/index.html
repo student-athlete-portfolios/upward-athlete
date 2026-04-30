@@ -278,7 +278,7 @@
         // For local testing only, paste your anon key between the quotes instead of the placeholder.
         const SUPABASE_URL = 'https://ehntlruhpmakubqofpbz.supabase.co';
         const SUPABASE_ANON_KEY = '__BOOK_NOW_FORM_KEY__';
-        const BOOK_FORM_TABLE = 'book_now_form';
+        const BOOK_FORM_TABLE = 'book-now-form';
         const supabaseAnonKey =
             SUPABASE_ANON_KEY === '__BOOK_NOW_FORM_KEY__' ? '' : SUPABASE_ANON_KEY;
 
@@ -305,7 +305,7 @@
             }
         }
 
-        // Form submission → public.book_now_form (name, graduation, sport, position, email, example, message)
+        // Form submission → public.book-now-form (name, graduation, sport, position, email, example, message)
         const contactForm = document.getElementById('contactForm');
         const successMessage = document.getElementById('success-message');
         const contactFormSection = document.getElementById('contact-form');
