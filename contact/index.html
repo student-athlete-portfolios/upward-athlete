@@ -29,7 +29,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -274,13 +274,11 @@
             });
         }
 
-        // Supabase publishable key: GitHub Actions replaces __BOOK_NOW_FORM_KEY__ using environment variable BOOK_NOW_FORM_KEY.
-        // For local testing only, paste your anon key between the quotes instead of the placeholder.
+        // Supabase publishable key (safe to expose client-side; RLS enforces access).
         const SUPABASE_URL = 'https://ehntlruhpmakubqofpbz.supabase.co';
-        const SUPABASE_ANON_KEY = '__BOOK_NOW_FORM_KEY__';
+        const SUPABASE_ANON_KEY = 'sb_publishable_70ColsGbXwhB3Hl0BjL3cQ_PfUhBXWu';
         const BOOK_FORM_TABLE = 'book-now-form';
-        const supabaseAnonKey =
-            SUPABASE_ANON_KEY === '__BOOK_NOW_FORM_KEY__' ? '' : SUPABASE_ANON_KEY;
+        const supabaseAnonKey = SUPABASE_ANON_KEY;
 
         function trimOrNull(v) {
             if (v == null || typeof v !== 'string') return null;
@@ -317,13 +315,6 @@
             formError.classList.add('hidden');
             formError.textContent = '';
 
-            if (!supabaseAnonKey) {
-                formError.textContent =
-                    'Form is not configured. Deploy via GitHub Actions (injects environment variable BOOK_NOW_FORM_KEY), or paste your anon key in contact/index.html for local use.';
-                formError.classList.remove('hidden');
-                return;
-            }
-
             const formData = new FormData(contactForm);
             const data = {};
             formData.forEach((value, key) => {
@@ -349,7 +340,10 @@
                 contactFormSection.classList.add('hidden');
                 successMessage.classList.remove('hidden');
             } catch (err) {
-                formError.textContent = 'Something went wrong. Please try again or email us directly.';
+                const message =
+                    (err && err.message ? err.message : '').trim() ||
+                    'Something went wrong. Please try again or email us directly.';
+                formError.textContent = message;
                 formError.classList.remove('hidden');
             } finally {
                 submitBtn.disabled = false;
