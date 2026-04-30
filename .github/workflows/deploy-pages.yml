@@ -29,13 +29,18 @@ jobs:
 
       - name: Inject BOOK_NOW_FORM_KEY into contact form
         env:
-          BOOK_NOW_FORM_KEY: ${{ vars.BOOK_NOW_FORM_KEY }}
+          BOOK_NOW_FORM_KEY: ${{ vars.BOOK_NOW_FORM_KEY || secrets.BOOK_NOW_FORM_KEY }}
         run: |
           python3 << 'PY'
           import os
           import pathlib
 
           key = os.environ.get("BOOK_NOW_FORM_KEY") or ""
+          if not key.strip():
+              raise SystemExit(
+                  "BOOK_NOW_FORM_KEY is empty. Set it in Environment variables "
+                  "(github-pages) or as a secret before deploying."
+              )
           path = pathlib.Path("contact/index.html")
           text = path.read_text(encoding="utf-8")
           marker = "__BOOK_NOW_FORM_KEY__"
