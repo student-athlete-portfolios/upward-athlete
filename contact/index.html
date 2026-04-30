@@ -178,7 +178,9 @@
                   <textarea name="message" rows="4" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Tell us about your recruiting goals..."></textarea>
                 </div>
 
-                <button type="submit" class="w-full py-5 bg-[#0F1629] text-white font-bold rounded-2xl uppercase tracking-[0.2em] hover:bg-slate-800 transition-all shadow-xl">
+                <p id="form-error" class="hidden text-sm text-red-600" role="alert"></p>
+
+                <button type="submit" id="contact-submit" class="w-full py-5 bg-[#0F1629] text-white font-bold rounded-2xl uppercase tracking-[0.2em] hover:bg-slate-800 transition-all shadow-xl disabled:opacity-60 disabled:pointer-events-none">
                   Request a Build
                 </button>
              </form>
@@ -284,27 +286,87 @@
             });
         }
 
-        // Form submission
+        // Supabase publishable key: GitHub Actions replaces __BOOK_NOW_FORM_KEY__ using env secret BOOK_NOW_FORM_KEY.
+        // For local testing only, paste your anon key between the quotes instead of the placeholder.
+        const SUPABASE_URL = 'https://ehntlruhpmakubqofpbz.supabase.co';
+        const SUPABASE_ANON_KEY = '__BOOK_NOW_FORM_KEY__';
+        const BOOK_FORM_TABLE = 'book_now_form';
+        const supabaseAnonKey =
+            SUPABASE_ANON_KEY === '__BOOK_NOW_FORM_KEY__' ? '' : SUPABASE_ANON_KEY;
+
+        function trimOrNull(v) {
+            if (v == null || typeof v !== 'string') return null;
+            const t = v.trim();
+            return t === '' ? null : t;
+        }
+
+        async function insertBookFormRow(row) {
+            const res = await fetch(`${SUPABASE_URL}/rest/v1/${BOOK_FORM_TABLE}`, {
+                method: 'POST',
+                headers: {
+                    apikey: supabaseAnonKey,
+                    Authorization: `Bearer ${supabaseAnonKey}`,
+                    'Content-Type': 'application/json',
+                    Prefer: 'return=minimal',
+                },
+                body: JSON.stringify(row),
+            });
+            if (!res.ok) {
+                const errText = await res.text();
+                throw new Error(errText || `Request failed (${res.status})`);
+            }
+        }
+
+        // Form submission → public.book_now_form (name, graduation, sport, position, email, example, message)
         const contactForm = document.getElementById('contactForm');
         const successMessage = document.getElementById('success-message');
         const contactFormSection = document.getElementById('contact-form');
+        const formError = document.getElementById('form-error');
+        const submitBtn = document.getElementById('contact-submit');
 
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Get form data
+            formError.classList.add('hidden');
+            formError.textContent = '';
+
+            if (!supabaseAnonKey) {
+                formError.textContent =
+                    'Form is not configured. Deploy via GitHub Actions (injects BOOK_NOW_FORM_KEY), or paste your anon key in contact/index.html for local use.';
+                formError.classList.remove('hidden');
+                return;
+            }
+
             const formData = new FormData(contactForm);
             const data = {};
             formData.forEach((value, key) => {
                 data[key] = value;
             });
 
-            // Here you would typically send the data to a server
-            // For now, we'll just show the success message
-            
-            // Hide form, show success message
-            contactFormSection.classList.add('hidden');
-            successMessage.classList.remove('hidden');
+            const row = {
+                name: trimOrNull(data.athleteName),
+                graduation: trimOrNull(data.gradYear),
+                sport: trimOrNull(data.sport),
+                position: trimOrNull(data.position),
+                email: trimOrNull(data.email),
+                example: trimOrNull(data.example),
+                message: trimOrNull(data.message),
+            };
+
+            submitBtn.disabled = true;
+            const prevLabel = submitBtn.textContent;
+            submitBtn.textContent = 'Sending…';
+
+            try {
+                await insertBookFormRow(row);
+                contactFormSection.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+            } catch (err) {
+                formError.textContent = 'Something went wrong. Please try again or email us directly.';
+                formError.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = prevLabel;
+            }
         });
     </script>
 </body>
